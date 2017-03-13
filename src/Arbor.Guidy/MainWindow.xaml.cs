@@ -22,9 +22,9 @@ namespace Arbor.Guidy
 
         private void GenerateAndShowNewGuid()
         {
-            Guid guid = GenerateNewGuid();
+            Guid guid = GuidMaker.GenerateNewGuid(StandardGuidRadioButton.IsChecked.IsTrue());
 
-            GuidTextBox.Text = FormatGuid(guid);
+            GuidTextBox.Text = GuidMaker.FormatGuid(guid);
 
             try
             {
@@ -45,24 +45,9 @@ namespace Arbor.Guidy
             }
         }
 
-
         private void ShowNoCombGuid(string message)
         {
             CombGuidDateLabel.Content = $"Not a COMB GUID {message}";
-        }
-
-        private string FormatGuid(Guid guid)
-        {
-            return guid.ToString().ToUpperInvariant();
-        }
-
-        private Guid GenerateNewGuid()
-        {
-            Guid resultGuid = StandardGuidRadioButton.IsChecked.IsTrue()
-                ? Guid.NewGuid()
-                : CombGuidIdGeneration.NewGuid();
-
-            return resultGuid;
         }
 
         private void CopyButton_Click(object sender, RoutedEventArgs e)
@@ -71,14 +56,6 @@ namespace Arbor.Guidy
             {
                 Clipboard.SetText(GuidTextBox.Text);
             }
-        }
-    }
-
-    public static class BoolExtensions
-    {
-        public static bool IsTrue(this bool? value)
-        {
-            return value.HasValue && value.Value;
         }
     }
 }

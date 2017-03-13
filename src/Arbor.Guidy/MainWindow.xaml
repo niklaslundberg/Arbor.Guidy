@@ -1,0 +1,19 @@
+﻿<Window x:Class="Arbor.Guidy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Arbor.Guidy"
+        mc:Ignorable="d"
+        Title="Guidy" Height="350" Width="525">
+    <Grid>
+        <Button Content="New" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="75" x:Name="NewButton" Click="NewButton_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267" x:Name="GuidTextBox"/>
+        <Button Content="Copy" HorizontalAlignment="Left" Margin="90,41,0,0" VerticalAlignment="Top" Width="75" x:Name="CopyButton" Click="CopyButton_Click"/>
+        <RadioButton Content="Standard GUID" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" GroupName="GuidTypeGroup" IsChecked="True" x:Name="StandardGuidRadioButton"/>
+        <RadioButton Content="COMB GUID" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" GroupName="GuidTypeGroup" x:Name="CombGuidRadioButton"/>
+        <Label Content="COMB GUID Date:" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="110,113,0,0" VerticalAlignment="Top" x:Name="CombGuidDateLabel"/>
+
+    </Grid>
+</Window>
